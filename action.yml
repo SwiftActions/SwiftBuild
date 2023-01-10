@@ -1,0 +1,15 @@
+name: 'SwiftBuild'
+author: 'SwiftActions'
+description: 'Executes a build of a Swift project.'
+
+branding:
+  icon: 'terminal'
+  color: 'blue'
+
+#inputs:
+
+runs:
+  using: 'composite'
+  steps:
+    - run: ${{ github.action_path }}/script.sh
+      shell: bash
