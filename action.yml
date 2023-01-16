@@ -15,5 +15,5 @@ inputs:
 runs:
   using: 'composite'
   steps:
-    - run: swift run SwiftBuild --verbose {{ $inputs.verbose }}
+    - run: cd ${{ github.action_path }} && swift run SwiftBuild --verbose {{ $inputs.verbose }}
       shell: bash
