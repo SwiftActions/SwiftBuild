@@ -10,11 +10,11 @@ inputs:
   target:
     description: "Build the specified target"
     required: false
-    default: ""
+    default: '""'
   product:
     description: "Build the specified product"
     required: false
-    default: ""
+    default: '""'
   verbose:
     description: "Increase verbosity to include informational output"
     required: false
