@@ -9,6 +9,7 @@ struct SwiftBuild: ParsableCommand {
     }
     
     @Option var verbose: Bool = false
+    @Option var githubWorkspace: String
     
     func run() throws {
         var arguments: [String] = []
@@ -17,7 +18,7 @@ struct SwiftBuild: ParsableCommand {
             arguments.append("--verbose")
         }
         
-        let shellout = try shellOut(to: "swift build", arguments: arguments)
+        let shellout = try shellOut(to: "swift build", arguments: arguments, at: githubWorkspace)
         print(shellout)
     }
 }
