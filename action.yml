@@ -7,6 +7,14 @@ branding:
   color: 'blue'
 
 inputs:
+  target:
+    description: "Build the specified target"
+    required: false
+    default: ""
+  product:
+    description: "Build the specified product"
+    required: false
+    default: ""
   verbose:
     description: "Increase verbosity to include informational output"
     required: false
@@ -18,6 +26,8 @@ runs:
     - run: |
         cd ${{ github.action_path }}
         swift run SwiftBuild \
+          --target ${{ inputs.target }} \
+          --product ${{ inputs.product }} \
           --verbose ${{ inputs.verbose }} \
           --github-workspace ${{ github.workspace }}
       shell: bash
