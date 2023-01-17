@@ -29,5 +29,5 @@ runs:
           --target ${{ inputs.target }} \
           --product ${{ inputs.product }} \
           --verbose ${{ inputs.verbose }} \
-          --github-workspace ${{ github.workspace }}
+          --working-directory ${{ github.workspace }}
       shell: bash

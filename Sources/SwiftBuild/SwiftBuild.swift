@@ -5,14 +5,15 @@ import ShellOut
 struct SwiftBuild: ParsableCommand {
     static var configuration: CommandConfiguration {
         CommandConfiguration(
-            commandName: "SwiftBuild"
+            commandName: "SwiftBuild",
+            abstract: "Proxy to the `swift build` command, executing in a specific directory."
         )
     }
     
-    @Option var target: String = ""
-    @Option var product: String = ""
-    @Option var verbose: Bool = false
-    @Option var githubWorkspace: String
+    @Option(help: "Build the specified target") var target: String = ""
+    @Option(help: "Build the specified product") var product: String = ""
+    @Option(help: "Increase verbosity to include informational output.") var verbose: Bool = false
+    @Option(help: "Path at which the command will be executed.") var workingDirectory: String
     
     func run() throws {
         var arguments: [String] = []
@@ -27,7 +28,7 @@ struct SwiftBuild: ParsableCommand {
             arguments.append("--verbose")
         }
         
-        let shellout = try shellOut(to: "swift build", arguments: arguments, at: githubWorkspace)
-        print(shellout)
+        let output = try shellOut(to: "swift build", arguments: arguments, at: workingDirectory)
+        print(output)
     }
 }
