@@ -14,7 +14,7 @@ Actions are referenced with the `uses` syntax. For example:
 steps:
   - uses: actions/checkout@v3
   - name: Build Swift Project
-    uses: SwiftActions/SwiftBuild@v1
+    uses: SwiftActions/SwiftBuild@vmain
     with:
       target: "SwiftBuild"
       verbose: true
