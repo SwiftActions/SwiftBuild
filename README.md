@@ -14,7 +14,7 @@ Actions are referenced with the `uses` syntax. For example:
 steps:
   - uses: actions/checkout@v3
   - name: Build Swift Project
-    uses: SwiftActions/SwiftBuild@vmain
+    uses: SwiftActions/SwiftBuild@v0.2
     with:
       target: "SwiftBuild"
       verbose: true
@@ -39,8 +39,12 @@ The **SwiftBuild** action uses _Swift_ to build _Swift_. Some third party librar
 
 ## Contributions
 
-Details TBD
+[Code of Conduct](https://github.com/SwiftActions/.github/blob/main/CODE_OF_CONDUCT.md)
+
+Contribution Guidelines: Coming Soon!
 
 ## Legal
 
-Uses MIT license. The Swift logo is a trademark of Apple Inc.
+[MIT license](https://github.com/SwiftActions/.github/blob/main/LICENSE.md)
+
+The Swift logo is a trademark of [Apple Inc](https://apple.com).
